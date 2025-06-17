@@ -8,7 +8,7 @@
                 <div class="card-body p-md-3 p-2">
                     <p class="mb-0"><small>{!! str_replace('-', ' ', ucwords($category)) !!}</small></p>
                     <p class="fw-bolder product-title mb-1">{!! str_replace('-', ' ', ucwords($title)) !!}</p>
-                    <p>$ {{ $price }}</p>
+                    <p>Rp {{ number_format($price,0,',','.') }}</p>
                 </div>
             </div>
         </div>

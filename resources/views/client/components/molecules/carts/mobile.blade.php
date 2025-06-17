@@ -11,11 +11,11 @@
             <div class="row">
                 <div class="col-6">
                     <label for="price">Price</label>
-                    <p id="price" class="font-bold">${{ $details['price']}}</p>
+                    <p id="price" class="font-bold">Rp{{ number_format($details['price'],0,',','.') }}</p>
                 </div>
                 <div class="col-6">
                     <label for="subtotal">Sub Total</label>
-                    <p class="font-bold">$<span class="product-subtotal">{{$details['price'] * $details['quantity']}}</span></p>
+                    <p class="font-bold">Rp<span class="product-subtotal">{{ number_format($details['price'] * $details['quantity'],0,',','.') }}</span></p>
                 </div>
                 <div class="col-12">
                     <label for="quantity">Quantity : {{request()->routeIs('clientCheckout') ? 'x'.$details['quantity'] : ''}}</label>
@@ -35,7 +35,7 @@
 
 <div class="card mt-3 mb-4">
     <div class="card-body">
-        <h5 class="font-secondary"><strong>Total : $<span class="cart-total">{{ $total}}</span></strong></h5>
+        <h5 class="font-secondary"><strong>Total : Rp<span class="cart-total">{{ number_format($total,0,',','.') }}</span></strong></h5>
         @if(!request()->routeIs('clientCheckout'))
             <div class="d-flex justify-content-between mt-3 font-secondary">
                 <a href="{{ url('/') }}" class="btn btn-sm btn-outline-secondary">
